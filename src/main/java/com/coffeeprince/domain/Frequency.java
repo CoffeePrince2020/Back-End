@@ -6,29 +6,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
-// 이벤트 종류에 관한 테이블
+//이벤트 별 프리퀀시 종류
 @Entity
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class event extends BaseTimeEntity {
+public class Frequency {
 
-    // id
-    @Id @Column(name = "eventId")
+    //id
+    @Id @Column(name="frequencyId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
 
-    // company
-    @JoinColumn(name = "companyId")
-    private long companyId;
+    //frequencyName
+    private String frequencyName;
 
-    // name
-    private String eventName;
-
-    // startdate
-    // enddate
-
+    //eventId
+    @JoinColumn(name="eventId")
+    private long eventId;
 }

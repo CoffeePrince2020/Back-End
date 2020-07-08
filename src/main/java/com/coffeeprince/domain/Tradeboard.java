@@ -15,7 +15,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class tradeboard {
+public class Tradeboard {
 
     //게시물 아이디   등록일 / 작성자 / 상태
     @Id @Column(name = "boardId")
@@ -37,5 +37,5 @@ public class tradeboard {
     // 교환할 프리퀀시 종류?
     @OneToMany
     @JoinColumn(name="frequencyTradeId")
-    List<frequencyTradeList> frequencyTradeLists;
+    List<FrequencyTradeList> FrequencyTradeLists;
 }

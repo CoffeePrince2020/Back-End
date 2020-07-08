@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class frequencyTradeList {
+public class FrequencyTradeList {
 
     @Id @Column(name = "frequencyTradeId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

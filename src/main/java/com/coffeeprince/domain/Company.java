@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class company {
+public class Company {
 
     @Id @Column(name = "companyId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
