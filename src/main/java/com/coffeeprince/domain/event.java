@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class event {
+public class event extends BaseTimeEntity {
 
     // id
     @Id @Column(name = "eventId")
@@ -29,9 +29,6 @@ public class event {
     private String eventName;
 
     // startdate
-    private LocalDateTime startDate;
-
     // enddate
-    private LocalDateTime endDate;
 
 }
