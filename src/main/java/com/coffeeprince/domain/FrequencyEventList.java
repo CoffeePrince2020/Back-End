@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FrequencyEventList extends BaseTimeEntity {
+public class FrequencyEventList{
 
     // id
     @Id @Column(name = "eventId")
@@ -29,6 +29,8 @@ public class FrequencyEventList extends BaseTimeEntity {
     private String eventName;
 
     // startdate
+    private LocalDateTime startDate;
     // enddate
+    private LocalDateTime endDate;
 
 }

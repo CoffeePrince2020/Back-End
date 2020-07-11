@@ -15,7 +15,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Tradeboard {
+public class Tradeboard extends BaseTimeEntity {
 
     //게시물 아이디   등록일 / 작성자 / 상태
     @Id @Column(name = "boardId")
@@ -25,9 +25,6 @@ public class Tradeboard {
     // 이벤트 내용Id
     private long eventId;
 
-    // 등록일
-    private LocalDateTime writeDate;
-
     // 작성자
     private String writer;
 
@@ -35,7 +32,7 @@ public class Tradeboard {
     private Integer status;
 
     // 교환할 프리퀀시 종류?
-    @OneToMany
-    @JoinColumn(name="frequencyTradeId")
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name="boardId")
     List<FrequencyTradeList> FrequencyTradeLists;
 }
