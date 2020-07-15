@@ -4,6 +4,8 @@ import com.coffeeprince.service.EventService;
 import com.coffeeprince.web.dto.EventResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +23,11 @@ public class EventController {
     public List<EventResponseDto> boardList(
             @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "10") Integer size) {
         return eventService.boardList(page, size);
+    }
+
+    @GetMapping("{boardId}")
+    public EventResponseDto getBoard(@PathVariable(value = "boardId")Long boardId) {
+        return eventService.getBoard(boardId);
     }
 
 }

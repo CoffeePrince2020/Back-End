@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -23,8 +25,20 @@ public class EventService {
         for(Tradeboard tb : tbs) {
             EventResponseDto erdto = new EventResponseDto(tb);
             erdtos.add(erdto);
+
         }
 
         return erdtos;
+    }
+
+    public EventResponseDto getBoard(Long boardId) {
+        Optional<Tradeboard> tb = tradeboardRepository.findById(boardId);
+        if(tb.isPresent()) {
+            EventResponseDto erdto = new EventResponseDto(tb.get());
+
+            return erdto;
+        } else {
+            throw new NoSuchElementException();
+        }
     }
 }
