@@ -27,8 +27,8 @@ public class EventService {
             erdtos.add(erdto);
 
         }
-
         return erdtos;
+
     }
 
     public EventResponseDto getBoard(Long boardId) {

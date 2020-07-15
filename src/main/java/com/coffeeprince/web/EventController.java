@@ -2,13 +2,9 @@ package com.coffeeprince.web;
 
 import com.coffeeprince.service.EventService;
 import com.coffeeprince.web.dto.EventResponseDto;
+import com.coffeeprince.web.dto.TradeBoardResquestDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,4 +26,9 @@ public class EventController {
         return eventService.getBoard(boardId);
     }
 
+    @PostMapping()
+    public void boardSave(
+            @RequestBody TradeBoardResquestDTO resquestDTO
+            ) {
+    }
 }

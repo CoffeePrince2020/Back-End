@@ -2,6 +2,7 @@ package com.coffeeprince.web.dto;
 
 import com.coffeeprince.domain.FrequencyTradeList;
 import com.coffeeprince.domain.Tradeboard;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class EventResponseDto {
 
     private long eventId;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createDate;
 
     private String writer;
