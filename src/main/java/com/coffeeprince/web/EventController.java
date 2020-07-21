@@ -26,9 +26,10 @@ public class EventController {
         return eventService.getBoard(boardId);
     }
 
-    @PostMapping()
+    @PostMapping("{userId}")
     public void boardSave(
-            @RequestBody TradeBoardResquestDTO resquestDTO
+            @RequestBody TradeBoardResquestDTO req
             ) {
+        eventService.saveBoard(req);
     }
 }

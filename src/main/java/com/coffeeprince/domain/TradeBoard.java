@@ -15,7 +15,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Tradeboard extends BaseTimeEntity {
+public class TradeBoard extends BaseTimeEntity {
 
     //게시물 아이디   등록일 / 작성자 / 상태
     @Id @Column(name = "boardId")

@@ -1,12 +1,11 @@
 package com.coffeeprince.web.dto;
 
 import com.coffeeprince.domain.FrequencyTradeList;
-import com.coffeeprince.domain.Tradeboard;
+import com.coffeeprince.domain.TradeBoard;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ public class EventResponseDto {
 
     List<FrequencyTradeResponseDto> FrequencyTradeLists;
 
-    public EventResponseDto(Tradeboard entity) {
+    public EventResponseDto(TradeBoard entity) {
         this.Id = entity.getId();
         this.eventId = entity.getEventId();
         this.createDate = entity.getCreatedDate();
