@@ -13,8 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -37,24 +35,16 @@ public class EventService {
     }
 
     public EventResponseDto getBoard(Long boardId) {
-        Optional<TradeBoard> tb = tradeboardRepository.findById(boardId);
-        if(tb.isPresent()) {
-            EventResponseDto erdto = new EventResponseDto(tb.get());
-
-            return erdto;
-        } else {
-            throw new NoSuchElementException();
-        }
+        return tradeboardRepository.findById(boardId).map(EventResponseDto::new).orElseThrow(()->new IllegalArgumentException("없는 게시물입니다."));
     }
 
-    @Transactional
     public void saveBoard(TradeBoardResquestDTO req) {
-         TradeBoard tradeBoard =  tradeboardRepository.save(req.tradeBoardInsert());
-
-         long boardId = tradeBoard.getId();
+         long boardId = tradeboardRepository.save(req.tradeBoardInsert()).getId();
 
          for(FrequencyTradeRequestDto frequecyDto : req.getFrequencyList()) {
             frequencyTradeListRepository.save(frequecyDto.frequencyInsert(boardId));
          }
     }
+
+
 }
