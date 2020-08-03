@@ -2,40 +2,44 @@ package com.coffeeprince.service;
 
 import com.coffeeprince.domain.FrequencyTradeList;
 import com.coffeeprince.domain.TradeBoard;
-import com.coffeeprince.repository.CompanyRepository;
-import com.coffeeprince.repository.FrequencyEventListRepository;
-import com.coffeeprince.repository.FrequencyRepository;
 import com.coffeeprince.repository.FrequencyTradeListRepository;
 import com.coffeeprince.repository.TradeboardRepository;
+import com.coffeeprince.web.dto.EventResponseDto;
+import com.coffeeprince.web.dto.FrequencyTradeRequestDto;
+import com.coffeeprince.web.dto.TradeBoardResquestDTO;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.TestConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
+
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @DataJpaTest
 class EventServiceTest {
 
-    @Autowired
-    CompanyRepository companyRepository;
+    EventService eventService;
 
-    @Autowired
+   /* CompanyRepository companyRepository;
+
     FrequencyEventListRepository frequencyEventListRepository;
 
-    @Autowired
-    FrequencyRepository frequencyRepository;
+    FrequencyRepository frequencyRepository;*/
 
-    @Autowired
     FrequencyTradeListRepository frequencyTradeListRepository;
 
-    @Autowired
     TradeboardRepository tradeboardRepository;
+
+    @BeforeEach
+    public void beforeEach() {
+        eventService = new EventService(this.tradeboardRepository, this.frequencyTradeListRepository);
+    }
 
     @Test
     void boardList() {
@@ -50,10 +54,10 @@ class EventServiceTest {
 
         //List<FrequencyTradeList> ftlists = new ArrayList<FrequencyTradeList>();
         FrequencyTradeList ftlist = FrequencyTradeList.builder()
-                                        .Id(1L)
-                                        .boardId(1L)
-                                        .frequencyId(1L)
-                                        .quantity(1).build();
+                .Id(1L)
+                .boardId(1L)
+                .frequencyId(1L)
+                .quantity(1).build();
         //ftlists.add(ftlist);
         FrequencyTradeList ftlist2 = frequencyTradeListRepository.save(ftlist);
 
@@ -73,6 +77,17 @@ class EventServiceTest {
 
     @Test
     void saveBoard() {
+        // given
+        List<FrequencyTradeRequestDto> frequencyTradeRequestDtos = new ArrayList<FrequencyTradeRequestDto>();
+        FrequencyTradeRequestDto frequencyTradeRequestDto = new FrequencyTradeRequestDto(1L, 1);
+        frequencyTradeRequestDtos.add(frequencyTradeRequestDto);
+        TradeBoardResquestDTO tradeBoardResquestDTO = new TradeBoardResquestDTO(1L, "mins99", frequencyTradeRequestDtos);
 
+        // when
+        eventService.saveBoard(tradeBoardResquestDTO);
+        EventResponseDto erdto = eventService.getBoard(1L);
+
+        // then
+        assertThat(erdto.getWriter()).isEqualTo("mins99");
     }
 }
