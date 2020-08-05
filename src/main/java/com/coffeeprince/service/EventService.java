@@ -18,8 +18,8 @@ import java.util.List;
 @Service
 public class EventService {
 
-    public final TradeboardRepository tradeboardRepository;
-    public final FrequencyTradeListRepository frequencyTradeListRepository;
+    private final TradeboardRepository tradeboardRepository;
+    private final FrequencyTradeListRepository frequencyTradeListRepository;
 
     public List<EventResponseDto> boardList(Integer page, Integer size) {
         PageRequest pageRequest = PageRequest.of(page, size);
