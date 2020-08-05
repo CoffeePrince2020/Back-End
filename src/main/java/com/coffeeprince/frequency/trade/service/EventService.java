@@ -1,11 +1,11 @@
-package com.coffeeprince.service;
+package com.coffeeprince.frequency.trade.service;
 
-import com.coffeeprince.domain.TradeBoard;
-import com.coffeeprince.repository.FrequencyTradeListRepository;
-import com.coffeeprince.repository.TradeboardRepository;
-import com.coffeeprince.web.dto.EventResponseDto;
-import com.coffeeprince.web.dto.FrequencyTradeRequestDto;
-import com.coffeeprince.web.dto.TradeBoardResquestDTO;
+import com.coffeeprince.frequency.trade.domain.TradeBoard;
+import com.coffeeprince.frequency.trade.repository.FrequencyTradeListRepository;
+import com.coffeeprince.frequency.trade.repository.TradeboardRepository;
+import com.coffeeprince.frequency.trade.web.dto.EventResponseDto;
+import com.coffeeprince.frequency.trade.web.dto.FrequencyTradeRequestDto;
+import com.coffeeprince.frequency.trade.web.dto.TradeBoardResquestDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;

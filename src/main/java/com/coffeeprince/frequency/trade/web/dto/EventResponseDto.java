@@ -1,7 +1,7 @@
-package com.coffeeprince.web.dto;
+package com.coffeeprince.frequency.trade.web.dto;
 
-import com.coffeeprince.domain.FrequencyTradeList;
-import com.coffeeprince.domain.TradeBoard;
+import com.coffeeprince.frequency.trade.domain.FrequencyTradeList;
+import com.coffeeprince.frequency.trade.domain.TradeBoard;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

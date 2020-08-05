@@ -1,20 +1,18 @@
 package com.coffeeprince.service;
 
-import com.coffeeprince.domain.FrequencyTradeList;
-import com.coffeeprince.domain.TradeBoard;
-import com.coffeeprince.repository.CompanyRepository;
-import com.coffeeprince.repository.FrequencyEventListRepository;
-import com.coffeeprince.repository.FrequencyRepository;
-import com.coffeeprince.repository.FrequencyTradeListRepository;
-import com.coffeeprince.repository.TradeboardRepository;
+import com.coffeeprince.frequency.trade.domain.FrequencyTradeList;
+import com.coffeeprince.frequency.trade.domain.TradeBoard;
+import com.coffeeprince.frequency.trade.repository.CompanyRepository;
+import com.coffeeprince.frequency.trade.repository.FrequencyEventListRepository;
+import com.coffeeprince.frequency.trade.repository.FrequencyRepository;
+import com.coffeeprince.frequency.trade.repository.FrequencyTradeListRepository;
+import com.coffeeprince.frequency.trade.repository.TradeboardRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.TestConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;

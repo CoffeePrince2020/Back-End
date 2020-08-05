@@ -1,6 +1,6 @@
-package com.coffeeprince.web.dto;
+package com.coffeeprince.frequency.trade.web.dto;
 
-import com.coffeeprince.domain.FrequencyTradeList;
+import com.coffeeprince.frequency.trade.domain.FrequencyTradeList;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

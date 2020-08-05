@@ -1,8 +1,8 @@
-package com.coffeeprince.web;
+package com.coffeeprince.frequency.trade.web;
 
-import com.coffeeprince.service.EventService;
-import com.coffeeprince.web.dto.EventResponseDto;
-import com.coffeeprince.web.dto.TradeBoardResquestDTO;
+import com.coffeeprince.frequency.trade.service.EventService;
+import com.coffeeprince.frequency.trade.web.dto.EventResponseDto;
+import com.coffeeprince.frequency.trade.web.dto.TradeBoardResquestDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

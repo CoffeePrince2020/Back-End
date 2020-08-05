@@ -1,4 +1,4 @@
-package com.coffeeprince.domain;
+package com.coffeeprince.frequency.common.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

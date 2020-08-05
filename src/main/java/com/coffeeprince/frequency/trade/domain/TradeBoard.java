@@ -1,12 +1,12 @@
-package com.coffeeprince.domain;
+package com.coffeeprince.frequency.trade.domain;
 
+import com.coffeeprince.frequency.common.domain.BaseTimeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.List;
 
 // 교환 글 엔티티
