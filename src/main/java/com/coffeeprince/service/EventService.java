@@ -9,7 +9,6 @@ import com.coffeeprince.web.dto.TradeBoardResquestDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +24,7 @@ public class EventService {
         PageRequest pageRequest = PageRequest.of(page, size);
         List<TradeBoard> tbs = tradeboardRepository.findAll(pageRequest).getContent();
         List<EventResponseDto> erdtos = new ArrayList<>();
-        for(TradeBoard tb : tbs) {
+        for (TradeBoard tb : tbs) {
             EventResponseDto erdto = new EventResponseDto(tb);
             erdtos.add(erdto);
 
@@ -35,15 +34,15 @@ public class EventService {
     }
 
     public EventResponseDto getBoard(Long boardId) {
-        return tradeboardRepository.findById(boardId).map(EventResponseDto::new).orElseThrow(()->new IllegalArgumentException("없는 게시물입니다."));
+        return tradeboardRepository.findById(boardId).map(EventResponseDto::new).orElseThrow(() -> new IllegalArgumentException("없는 게시물입니다."));
     }
 
     public void saveBoard(TradeBoardResquestDTO req) {
-         long boardId = tradeboardRepository.save(req.tradeBoardInsert()).getId();
+        long boardId = tradeboardRepository.save(req.tradeBoardInsert()).getId();
 
-         for(FrequencyTradeRequestDto frequecyDto : req.getFrequencyList()) {
+        for (FrequencyTradeRequestDto frequecyDto : req.getFrequencyList()) {
             frequencyTradeListRepository.save(frequecyDto.frequencyInsert(boardId));
-         }
+        }
     }
 
 
