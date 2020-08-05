@@ -18,6 +18,7 @@ public class TradeBoardResquestDTO {
     public TradeBoard tradeBoardInsert () {
         return TradeBoard.builder()
                 .eventId(this.eventId)
-                .writer(this.writer).build();
+                .writer(this.writer)
+                .status(1).build();
     }
 }

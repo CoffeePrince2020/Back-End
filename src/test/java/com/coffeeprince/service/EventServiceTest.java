@@ -2,9 +2,9 @@ package com.coffeeprince.service;
 
 import com.coffeeprince.frequency.trade.domain.FrequencyTradeList;
 import com.coffeeprince.frequency.trade.domain.TradeBoard;
-import com.coffeeprince.frequency.trade.repository.CompanyRepository;
-import com.coffeeprince.frequency.trade.repository.FrequencyEventListRepository;
-import com.coffeeprince.frequency.trade.repository.FrequencyRepository;
+import com.coffeeprince.frequency.common.repository.CompanyRepository;
+import com.coffeeprince.frequency.common.repository.FrequencyEventListRepository;
+import com.coffeeprince.frequency.common.repository.FrequencyRepository;
 import com.coffeeprince.frequency.trade.repository.FrequencyTradeListRepository;
 import com.coffeeprince.frequency.trade.repository.TradeboardRepository;
 import org.junit.jupiter.api.Test;

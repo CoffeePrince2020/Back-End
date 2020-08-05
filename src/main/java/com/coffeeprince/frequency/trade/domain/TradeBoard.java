@@ -35,4 +35,5 @@ public class TradeBoard extends BaseTimeEntity {
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name="boardId")
     List<FrequencyTradeList> FrequencyTradeLists;
+
 }

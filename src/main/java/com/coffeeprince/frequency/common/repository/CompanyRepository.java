@@ -1,4 +1,4 @@
-package com.coffeeprince.frequency.trade.repository;
+package com.coffeeprince.frequency.common.repository;
 
 import com.coffeeprince.frequency.common.domain.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
